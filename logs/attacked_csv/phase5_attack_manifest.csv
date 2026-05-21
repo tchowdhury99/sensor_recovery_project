@@ -1,0 +1,16 @@
+input_file,output_file,sensor,attacked_signals,attack_type,attack_start_sec,attack_end_sec
+baseline_01_hover_GPS.csv,baseline_01_hover_GPS_ATTACKED_GPS.csv,GPS,"Lat, Lng",constant position spoofing offset,10.0,20.0
+baseline_02_high_altitude_hover_GPS.csv,baseline_02_high_altitude_hover_GPS_ATTACKED_GPS.csv,GPS,"Lat, Lng",constant position spoofing offset,10.0,20.0
+baseline_03_forward_motion_GPS.csv,baseline_03_forward_motion_GPS_ATTACKED_GPS.csv,GPS,"Lat, Lng",constant position spoofing offset,10.0,20.0
+baseline_04_yaw_rotation_GPS.csv,baseline_04_yaw_rotation_GPS_ATTACKED_GPS.csv,GPS,"Lat, Lng",constant position spoofing offset,10.0,20.0
+baseline_05_mixed_maneuver_GPS.csv,baseline_05_mixed_maneuver_GPS_ATTACKED_GPS.csv,GPS,"Lat, Lng",constant position spoofing offset,10.0,20.0
+baseline_01_hover_BARO.csv,baseline_01_hover_BARO_ATTACKED_BARO.csv,BARO,Alt,constant altitude offset,10.0,20.0
+baseline_02_high_altitude_hover_BARO.csv,baseline_02_high_altitude_hover_BARO_ATTACKED_BARO.csv,BARO,Alt,constant altitude offset,10.0,20.0
+baseline_03_forward_motion_BARO.csv,baseline_03_forward_motion_BARO_ATTACKED_BARO.csv,BARO,Alt,constant altitude offset,10.0,20.0
+baseline_04_yaw_rotation_BARO.csv,baseline_04_yaw_rotation_BARO_ATTACKED_BARO.csv,BARO,Alt,constant altitude offset,10.0,20.0
+baseline_05_mixed_maneuver_BARO.csv,baseline_05_mixed_maneuver_BARO_ATTACKED_BARO.csv,BARO,Alt,constant altitude offset,10.0,20.0
+baseline_01_hover_IMU.csv,baseline_01_hover_IMU_ATTACKED_IMU.csv,IMU,GyrZ,constant gyroscope-Z bias,10.0,20.0
+baseline_02_high_altitude_hover_IMU.csv,baseline_02_high_altitude_hover_IMU_ATTACKED_IMU.csv,IMU,GyrZ,constant gyroscope-Z bias,10.0,20.0
+baseline_03_forward_motion_IMU.csv,baseline_03_forward_motion_IMU_ATTACKED_IMU.csv,IMU,GyrZ,constant gyroscope-Z bias,10.0,20.0
+baseline_04_yaw_rotation_IMU.csv,baseline_04_yaw_rotation_IMU_ATTACKED_IMU.csv,IMU,GyrZ,constant gyroscope-Z bias,10.0,20.0
+baseline_05_mixed_maneuver_IMU.csv,baseline_05_mixed_maneuver_IMU_ATTACKED_IMU.csv,IMU,GyrZ,constant gyroscope-Z bias,10.0,20.0
