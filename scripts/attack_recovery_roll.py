@@ -17,6 +17,7 @@ att["t"] = (att["TimeUS"] - att["TimeUS"].iloc[0]) / 1_000_000
 
 time = att["t"].to_numpy()
 real_roll = att["Roll"].astype(float).to_numpy()
+des_roll = att["DesRoll"].astype(float).to_numpy()
 
 # ------------------------------------------------------------
 # Step 1: Create artificial sensor attack
@@ -32,28 +33,44 @@ attack_mask = (time >= attack_start) & (time <= attack_end)
 attacked_roll[attack_mask] = attacked_roll[attack_mask] + attack_bias
 
 # ------------------------------------------------------------
-# Step 2: Software sensor prediction
-# Beginner version: predicted roll = previous real roll
-# Later we can improve this using linear regression/state-space model
+# Step 2: System Identification (SI) for State-Space Model
+# Use clean data (before attack) to train the model
+# x_{k+1} = A * x_k + B * u_k + C
 # ------------------------------------------------------------
-predicted_roll = np.zeros_like(real_roll)
-predicted_roll[0] = real_roll[0]
+train_mask = time < attack_start
+X_train = np.column_stack((
+    real_roll[train_mask][:-1], 
+    des_roll[train_mask][:-1], 
+    np.ones(np.sum(train_mask)-1)
+))
+y_train = real_roll[train_mask][1:]
 
-for i in range(1, len(real_roll)):
-    predicted_roll[i] = real_roll[i - 1]
+coef, _, _, _ = np.linalg.lstsq(X_train, y_train, rcond=None)
+A, B, C = coef[0], coef[1], coef[2]
+print(f"System Identification completed: A={A:.4f}, B={B:.4f}, C={C:.4f}")
 
 # ------------------------------------------------------------
-# Step 3: Detection and recovery logic
+# Step 3: Software sensor prediction, Detection and Recovery
 # If attacked sensor differs too much from software sensor,
 # replace attacked reading with software-sensor prediction.
 # ------------------------------------------------------------
 threshold = 5.0
 
-residual = np.abs(attacked_roll - predicted_roll)
-recovered_roll = attacked_roll.copy()
+predicted_roll = np.zeros_like(real_roll)
+recovered_roll = np.zeros_like(real_roll)
 recovery_mode = np.zeros_like(real_roll)
+residual = np.zeros_like(real_roll)
 
-for i in range(len(real_roll)):
+predicted_roll[0] = real_roll[0]
+recovered_roll[0] = real_roll[0]
+
+for i in range(1, len(real_roll)):
+    # Predict next state using previous recovered state and previous control input
+    predicted_roll[i] = A * recovered_roll[i - 1] + B * des_roll[i - 1] + C
+    
+    # Calculate residual against the ATTACKED physical sensor
+    residual[i] = np.abs(attacked_roll[i] - predicted_roll[i])
+    
     if residual[i] > threshold:
         recovered_roll[i] = predicted_roll[i]
         recovery_mode[i] = 1
@@ -91,7 +108,7 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.savefig(f"{FIG}/roll_attack_recovery.png", dpi=300)
-plt.show()
+
 
 # ------------------------------------------------------------
 # Step 6: Plot residual
@@ -106,7 +123,7 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.savefig(f"{FIG}/roll_attack_residual.png", dpi=300)
-plt.show()
+
 
 # ------------------------------------------------------------
 # Step 7: Plot recovery mode
@@ -120,7 +137,7 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.savefig(f"{FIG}/roll_recovery_switch.png", dpi=300)
-plt.show()
+
 
 print("Finished attack-recovery experiment.")
 print(f"CSV saved to: {CSV}/roll_attack_recovery_result.csv")
