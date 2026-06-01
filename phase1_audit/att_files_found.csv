@@ -1,0 +1,11 @@
+file,type_guess,rows,columns_count,has_TimeUS,has_TimeSec,duration_sec,has_ATT_required_RollPitchYaw,ATT_optional_available,columns
+baseline_01_hover_ATT.csv,ATT,1253,9,True,False,125.1999,True,"DesRoll,DesPitch,DesYaw","timestamp,TimeUS,DesRoll,Roll,DesPitch,Pitch,DesYaw,Yaw,AEKF"
+baseline_01_hover_XKF1.csv,XKF,2506,17,True,False,125.1999,True,,"timestamp,TimeUS,C,Roll,Pitch,Yaw,VN,VE,VD,dPD,PN,PE,PD,GX,GY,GZ,OH"
+baseline_02_high_altitude_hover_ATT.csv,ATT,1411,9,True,False,140.999411,True,"DesRoll,DesPitch,DesYaw","timestamp,TimeUS,DesRoll,Roll,DesPitch,Pitch,DesYaw,Yaw,AEKF"
+baseline_02_high_altitude_hover_XKF1.csv,XKF,2822,17,True,False,140.999411,True,,"timestamp,TimeUS,C,Roll,Pitch,Yaw,VN,VE,VD,dPD,PN,PE,PD,GX,GY,GZ,OH"
+baseline_03_forward_motion_ATT.csv,ATT,1138,9,True,False,113.700335,True,"DesRoll,DesPitch,DesYaw","timestamp,TimeUS,DesRoll,Roll,DesPitch,Pitch,DesYaw,Yaw,AEKF"
+baseline_03_forward_motion_XKF1.csv,XKF,2275,17,True,False,113.700335,True,,"timestamp,TimeUS,C,Roll,Pitch,Yaw,VN,VE,VD,dPD,PN,PE,PD,GX,GY,GZ,OH"
+baseline_04_yaw_rotation_ATT.csv,ATT,1848,9,True,False,184.700257,True,"DesRoll,DesPitch,DesYaw","timestamp,TimeUS,DesRoll,Roll,DesPitch,Pitch,DesYaw,Yaw,AEKF"
+baseline_04_yaw_rotation_XKF1.csv,XKF,3696,17,True,False,184.700257,True,,"timestamp,TimeUS,C,Roll,Pitch,Yaw,VN,VE,VD,dPD,PN,PE,PD,GX,GY,GZ,OH"
+baseline_05_mixed_maneuver_ATT.csv,ATT,2388,9,True,False,238.699482,True,"DesRoll,DesPitch,DesYaw","timestamp,TimeUS,DesRoll,Roll,DesPitch,Pitch,DesYaw,Yaw,AEKF"
+baseline_05_mixed_maneuver_XKF1.csv,XKF,4776,17,True,False,238.699482,True,,"timestamp,TimeUS,C,Roll,Pitch,Yaw,VN,VE,VD,dPD,PN,PE,PD,GX,GY,GZ,OH"

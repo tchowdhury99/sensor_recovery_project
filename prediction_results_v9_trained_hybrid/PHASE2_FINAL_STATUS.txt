@@ -1,0 +1,38 @@
+PHASE 2 FINAL STATUS
+
+Goal:
+Implement future-state software-sensor prediction before attack detection/recovery.
+
+Completed models:
+1. Direct one-step ARX
+2. Delta-state ARX
+3. Stable state-transition predictor
+4. Trained ATT-only ARX
+5. Trained ATT+IMU ARX
+6. Physics-informed ARX using gyro*dt terms
+7. Multi-step ARX
+8. Final trained hybrid software sensor
+
+Final selected Phase 2 predictor:
+V9 trained hybrid software sensor.
+
+Formula:
+x_hat[k+1] =
+    w_naive * x_naive[k+1]
+  + w_cv    * x_cv[k+1]
+  + w_arx   * x_arx[k+1]
+
+where:
+x_naive[k+1] = x[k]
+x_cv[k+1]    = 2*x[k] - x[k-1]
+x_arx[k+1]   = x[k] + W*phi[k]
+
+The weights are learned from validation data for each file and target.
+
+Important conclusion:
+The trained hybrid predictor is more stable than pure ARX and improves several dynamic cases.
+However, simple baselines remain very strong because the ATT one-step sample interval is very small.
+
+Next phase:
+Use the trained hybrid predictor for residual generation, attack detection, and recovery.
+Keep naive and constant-velocity baselines in comparison plots.
