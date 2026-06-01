@@ -1,0 +1,57 @@
+PHASE 4 V9 ATTACK DETECTION INTERPRETATION
+============================================================
+
+Input summary:
+- Summary CSV: /home/tchowdh4/sensor_recovery_project/detection_reports_v9/phase4_detection_summary_v9.csv
+- Rows: 1404
+
+Window rule comparison:
+     window_rule  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n
+ W10_N3_mean1.5x             0.0          NaN      NaN  0.982688           NaN  0
+W10_N3_mean1.25x             0.0          NaN      NaN  0.983300           NaN  0
+   W10_N3_mean1x             0.0          NaN      NaN  0.983639           NaN  0
+ W20_N5_mean1.5x             0.0          NaN      NaN  0.993044           NaN  0
+W20_N5_mean1.25x             0.0          NaN      NaN  0.993656           NaN  0
+   W20_N5_mean1x             0.0          NaN      NaN  0.994540           NaN  0
+ W30_N8_mean1.5x             0.0          NaN      NaN  0.995165           NaN  0
+W30_N8_mean1.25x             0.0          NaN      NaN  0.996049           NaN  0
+   W30_N8_mean1x             0.0          NaN      NaN  0.996933           NaN  0
+
+Recommended window rule:
+- W10_N3_mean1.5x
+- mean precision: 0.0000
+- mean recall: nan
+- mean F1: nan
+- mean false positive rate: 0.9827
+- median detection delay, samples: nan
+
+Attack-type comparison:
+attack_type  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n
+       bias             0.0          NaN      NaN  0.991002           NaN  0
+      pulse             0.0          NaN      NaN  0.991002           NaN  0
+       ramp             0.0          NaN      NaN  0.991002           NaN  0
+
+Axis comparison:
+attack_axis  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n
+       Roll             0.0          NaN      NaN  0.989628           NaN  0
+        Yaw             0.0          NaN      NaN  0.990307           NaN  0
+      Pitch             0.0          NaN      NaN  0.993243           NaN  0
+
+Threshold interpretation:
+- p99_abs appears sensitive: mean FPR is above 5%.
+- Recommendation: test p99.5_abs as the conservative backup before Phase 5.
+- Best-rule mean recall: nan
+- Best-rule mean F1: nan
+- Best-rule mean FPR: 0.9827
+
+Phase 4 completion decision:
+- Phase 4 is NOT fully complete yet.
+- Improve detection configuration before moving to recovery.
+  Reason: false positive rate is above 0.05.
+
+Recommended carry-forward configuration:
+- Software sensor: V9 trained hybrid
+- Residual: attacked_future[k+1] - V9_prediction[k+1]
+- Threshold family: p99_abs first; p99.5_abs if FPR is too high
+- Window detector: W10_N3_mean1.5x
+- Recovery: not performed in Phase 4
