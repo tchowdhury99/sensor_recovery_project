@@ -1,0 +1,21 @@
+============================================================
+Phase 7 Methodology Figure Generation
+Output directory: /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures
+============================================================
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure1_detection_recovery_pipeline.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure1_detection_recovery_pipeline.pdf
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure2_training_deployment_workflow.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure2_training_deployment_workflow.pdf
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure3_v9_hybrid_internal_structure.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure3_v9_hybrid_internal_structure.pdf
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure4_residual_window_detection_logic.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure4_residual_window_detection_logic.pdf
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure5_recovery_decision_logic.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/figure5_recovery_decision_logic.pdf
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/README.md
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/phase7_latex_snippets.tex
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_methodology_figures/phase7_section_4_2_2_methodology_summary.md
+============================================================
+Phase 7 completed successfully.
+Generated PNG, PDF, README, LaTeX snippet, and Markdown summary.
+============================================================

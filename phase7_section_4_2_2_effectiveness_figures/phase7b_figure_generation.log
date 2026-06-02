@@ -1,0 +1,34 @@
+============================================================
+Phase 7B: Section 4.2.2-Style Effectiveness Figure Generation
+Project root: /home/tchowdh4/sensor_recovery_project
+Output directory: /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures
+============================================================
+[INFO] Found 1313 relevant CSV files.
+[OK] Saved CSV audit: /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/phase7b_csv_audit.csv
+[INFO] Loaded thresholds from /home/tchowdh4/sensor_recovery_project/thresholds_v9/phase3_report_table_v9_hybrid_only.csv: {'Roll': 0.006864536559184, 'Pitch': 0.0091609409111704, 'Yaw': 0.0135963287353854}
+[INFO] Selected dataset for roles ['pred']: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_a_v9_prediction_accuracy.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_a_v9_prediction_accuracy.pdf
+[INFO] Selected dataset for roles ['residual']: /home/tchowdh4/sensor_recovery_project/thresholds_v9/phase3_clean_residual_thresholds_v9.csv
+[SKIP] Figure B: no target could be plotted.
+[INFO] Selected dataset for roles ['detected']: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Pitch_bias_W20_N5_mean1.5x_detection.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_c_window_detection_example.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_c_window_detection_example.pdf
+[INFO] Selected dataset for roles ['recovered']: /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovered_csvs/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection_OFFICIAL_PHASE5_RECOVERED.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_d_recovery_timeseries_example.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_d_recovery_timeseries_example.pdf
+[INFO] Selected dataset for roles ['rmse']: /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovery_reports/phase5_OFFICIAL_W10_N3_mean1x_recovery_summary.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_e_recovery_improvement_summary.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_e_recovery_improvement_summary.pdf
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/README.md
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/phase7b_4_2_2_latex_snippets.tex
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/phase7b_4_2_2_effectiveness_summary.md
+============================================================
+Phase 7B generation completed.
+Generated status:
+- Figure A V9 prediction accuracy: generated
+- Figure B clean residual threshold: skipped
+- Figure C window detection example: generated
+- Figure D recovery time series: generated
+- Figure E recovery improvement summary: generated
+============================================================

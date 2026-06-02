@@ -1,0 +1,39 @@
+============================================================
+Phase 7B v2: Corrected Section 4.2.2-Style Figure Generation
+Project root: /home/tchowdh4/sensor_recovery_project
+Output directory: /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures
+Final detector forced: W10_N3_mean1x
+============================================================
+[INFO] Loaded p99_abs thresholds from /home/tchowdh4/sensor_recovery_project/thresholds_v9/phase3_report_table_v9_hybrid_only.csv
+[INFO] Thresholds: {'Roll': 0.006864536559184, 'Pitch': 0.0091609409111704, 'Yaw': 0.0135963287353854}
+[INFO] Figure A source: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_a_v9_prediction_accuracy_v2.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_a_v9_prediction_accuracy_v2.pdf
+[INFO] Figure B Roll source: /home/tchowdh4/sensor_recovery_project/residual_results_v9/baseline_05_mixed_maneuver_Roll_clean_residuals_v9.csv
+[INFO] Figure B Pitch source: /home/tchowdh4/sensor_recovery_project/residual_results_v9/baseline_05_mixed_maneuver_Pitch_clean_residuals_v9.csv
+[INFO] Figure B Yaw source: /home/tchowdh4/sensor_recovery_project/residual_results_v9/baseline_05_mixed_maneuver_Yaw_clean_residuals_v9.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_b_clean_residual_threshold_v2.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_b_clean_residual_threshold_v2.pdf
+[INFO] Figure C Roll source: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection.csv
+[INFO] Figure C Pitch source: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection.csv
+[INFO] Figure C Yaw source: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Yaw_pulse_W10_N3_mean1x_detection.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_c_W10_N3_detection_examples_v2.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_c_W10_N3_detection_examples_v2.pdf
+[INFO] Figure D Roll source: /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovered_csvs/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection_OFFICIAL_PHASE5_RECOVERED.csv
+[INFO] Figure D Pitch source: /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovered_csvs/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection_OFFICIAL_PHASE5_RECOVERED.csv
+[INFO] Figure D Yaw source: /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovered_csvs/baseline_01_hover_Yaw_pulse_W10_N3_mean1x_detection_OFFICIAL_PHASE5_RECOVERED.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_d_W10_N3_recovery_examples_v2.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_d_W10_N3_recovery_examples_v2.pdf
+[INFO] Figure E source: /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovery_reports/phase5_OFFICIAL_W10_N3_mean1x_recovery_summary.csv
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_e_recovery_improvement_summary_v2.png
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/figure_4_2_2_e_recovery_improvement_summary_v2.pdf
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/README_PHASE7B_V2.md
+[OK] Saved /home/tchowdh4/sensor_recovery_project/phase7_section_4_2_2_effectiveness_figures/phase7b_v2_4_2_2_latex_snippets.tex
+============================================================
+Phase 7B v2 completed.
+Figure A prediction accuracy: generated
+Figure B clean residual threshold: generated
+Figure C W10_N3 detection examples: generated
+Figure D W10_N3 recovery examples: generated
+Figure E recovery improvement summary: generated
+============================================================
