@@ -1,0 +1,57 @@
+PHASE 6 FINAL RESULT SUMMARY
+============================
+
+Purpose:
+This Phase 6 package converts the completed Phase 5 official recovery results
+into paper-style final tables, figures, and written result summaries.
+
+Official Phase 5 configuration:
+- Software sensor: V9 trained hybrid
+- Detector: W10_N3_mean1x
+- Threshold: p99_abs
+
+Official Phase 5 input files:
+- Summary CSV:
+  /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovery_reports/phase5_OFFICIAL_W10_N3_mean1x_recovery_summary.csv
+- Interpretation report:
+  /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovery_reports/phase5_OFFICIAL_W10_N3_mean1x_recovery_interpretation.txt
+- Recovered CSV directory:
+  /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovered_csvs
+- Recovery figure directory:
+  /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_corrected_official
+
+Final aggregate results:
+- Official files evaluated: 39
+- Files improved by RMSE recovery: 39/39
+- Files improved by MAE recovery: 39/39
+
+RMSE:
+- Mean attacked RMSE: 0.016423050611058
+- Mean recovered RMSE: 0.001332188625576
+- Mean RMSE improvement: 92.566251383206%
+- Median RMSE improvement: 92.846965579162%
+- Minimum RMSE improvement: 85.161997333145%
+- Maximum RMSE improvement: 100.000000000000%
+
+MAE:
+- Mean attacked MAE: 0.006979895644135
+- Mean recovered MAE: 0.000446609915515
+- Mean MAE improvement: 94.367048917331%
+- Median MAE improvement: 94.698452721769%
+- Minimum MAE improvement: 86.262357972259%
+- Maximum MAE improvement: 100.000000000000%
+
+Interpretation:
+The final recovery results show that the V9 trained hybrid software sensor,
+combined with the corrected W10_N3_mean1x detector and p99_abs threshold,
+substantially reduced attack-induced signal error in the ArduPilot SITL
+experiments. Recovery improved all official evaluated files under the RMSE
+criterion and produced more than 90% average reduction in both RMSE and MAE.
+
+Generated Phase 6 package:
+- Tables:
+  /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables
+- Figures:
+  /home/tchowdh4/sensor_recovery_project/phase6_final_package/figures
+- Reports:
+  /home/tchowdh4/sensor_recovery_project/phase6_final_package/reports

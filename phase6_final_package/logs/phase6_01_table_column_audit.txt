@@ -1,0 +1,67 @@
+PHASE 6 TABLE GENERATION COLUMN AUDIT
+=====================================
+
+Input CSV: /home/tchowdh4/sensor_recovery_project/recovery_v9_corrected_official/recovery_reports/phase5_OFFICIAL_W10_N3_mean1x_recovery_summary.csv
+Rows: 39
+
+Columns:
+- input_file
+- output_recovered_csv
+- target
+- official_detector
+- threshold_type
+- software_sensor
+- time_col
+- detection_col
+- attacked_future_col
+- v9_prediction_col
+- clean_reference_col
+- attack_active_col
+- n_rows
+- detected_count
+- attack_active_count
+- recovered_by_v9_count
+- kept_attacked_measurement_count
+- attacked_rmse
+- recovered_rmse
+- rmse_improvement_percent
+- attacked_mae
+- recovered_mae
+- mae_improvement_percent
+- attacked_attack_region_rmse
+- recovered_attack_region_rmse
+- attacked_clean_region_rmse
+- recovered_clean_region_rmse
+- TP
+- FP
+- TN
+- FN
+- precision
+- recall
+- false_alarm_rate
+- recovery_plot
+- error_plot
+
+Detected mapping:
+- file_col: input_file
+- target_col: target
+- attacked_rmse_col: attacked_rmse
+- recovered_rmse_col: recovered_rmse
+- rmse_improvement_col: rmse_improvement_percent
+- attacked_mae_col: attacked_mae
+- recovered_mae_col: recovered_mae
+- mae_improvement_col: mae_improvement_percent
+
+Generated files:
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_best_cases.csv
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_best_cases.md
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_overall_metrics.csv
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_overall_metrics.md
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_overall_metrics.tex
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_per_file_metrics.csv
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_per_file_metrics.md
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_per_target_metrics.csv
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_per_target_metrics.md
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_per_target_metrics.tex
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_worst_cases.csv
+- /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables/phase6_worst_cases.md

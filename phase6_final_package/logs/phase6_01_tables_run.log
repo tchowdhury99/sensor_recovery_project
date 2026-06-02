@@ -1,0 +1,13 @@
+Phase 6 table generation complete.
+Tables written to: /home/tchowdh4/sensor_recovery_project/phase6_final_package/tables
+
+Key result check:
+Files evaluated: 39
+RMSE improved: 39/39
+MAE improved: 39/39
+Mean attacked RMSE: 0.016423050611058365
+Mean recovered RMSE: 0.001332188625575632
+Mean RMSE improvement: 92.56625138320572%
+Mean attacked MAE: 0.006979895644134896
+Mean recovered MAE: 0.00044660991551503796
+Mean MAE improvement: 94.36704891733108%
