@@ -1,0 +1,88 @@
+CORRECTED PHASE 4 V9 ATTACK DETECTION INTERPRETATION
+===========================================================================
+
+Input files:
+- Detection summary: /home/tchowdh4/sensor_recovery_project/detection_reports_v9_corrected/phase4_detection_summary_v9_corrected.csv
+- Alignment report: /home/tchowdh4/sensor_recovery_project/detection_reports_v9_corrected/phase4_alignment_report_v9_corrected.csv
+- Detection rows: 1404
+- Alignment rows: 13
+
+Alignment quality:
+                       baseline  axis  alignment_offset  n_prediction  alignment_median_abs_error  threshold_p99_abs  alignment_error_over_threshold
+              baseline_01_hover  Roll              1001           250                    0.001006           0.006865                        0.146549
+              baseline_01_hover Pitch              1001           250                    0.001115           0.009161                        0.121698
+              baseline_01_hover   Yaw              1001           250                    0.000282           0.013596                        0.020706
+baseline_02_high_altitude_hover  Roll              1127           282                    0.000565           0.006861                        0.082393
+baseline_02_high_altitude_hover Pitch              1127           282                    0.001456           0.007947                        0.183169
+baseline_02_high_altitude_hover   Yaw              1127           282                    0.000309           0.010773                        0.028682
+     baseline_03_forward_motion  Roll               909           227                    0.001460           0.006821                        0.214018
+     baseline_03_forward_motion Pitch               909           227                    0.003830           0.016190                        0.236560
+     baseline_03_forward_motion   Yaw               909           227                    0.000233           0.003050                        0.076544
+       baseline_04_yaw_rotation   Yaw              1477           369                    0.000839           0.003797                        0.221025
+     baseline_05_mixed_maneuver  Roll              1909           477                    0.000753           0.010307                        0.073033
+     baseline_05_mixed_maneuver Pitch              1909           477                    0.000817           0.009697                        0.084240
+     baseline_05_mixed_maneuver   Yaw              1909           477                    0.000000           0.004795                        0.000000
+
+Alignment decision:
+- PASS: All axes have acceptable prediction-to-measurement alignment.
+- The earlier huge Yaw residual problem is fixed.
+
+Window rule comparison:
+     window_rule  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n_rows
+   W10_N3_mean1x        0.810919     0.913259 0.848136  0.035374           2.0      39
+W10_N3_mean1.25x        0.813438     0.907158 0.847423  0.034009           2.0      39
+ W10_N3_mean1.5x        0.814867     0.905021 0.847283  0.033157           2.0      39
+   W20_N5_mean1x        0.690263     0.873501 0.751937  0.073379           4.0      39
+W20_N5_mean1.25x        0.692505     0.858237 0.749018  0.070677           4.0      39
+ W20_N5_mean1.5x        0.692105     0.840704 0.744177  0.069065           4.0      39
+   W30_N8_mean1x        0.605104     0.828450 0.675694  0.110378           6.0      39
+W30_N8_mean1.25x        0.607106     0.804261 0.670831  0.105726           7.0      39
+ W30_N8_mean1.5x        0.607919     0.784871 0.666606  0.102408           7.0      39
+
+Recommended window rule:
+- W10_N3_mean1x
+- mean precision: 0.8109
+- mean recall: 0.9133
+- mean F1: 0.8481
+- mean FPR: 0.0354
+- median detection delay: 2.0
+
+Attack-type comparison:
+attack_type  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n_rows
+       bias        0.851666     0.951405 0.898160  0.073108           4.0     117
+       ramp        0.817855     0.780419 0.797781  0.077091          19.0     117
+      pulse        0.441888     0.839996 0.571095  0.061192           2.0     117
+
+Axis comparison:
+ axis  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n_rows
+ Roll        0.704003     0.868375 0.760048  0.071479           4.0     108
+  Yaw        0.708395     0.853629 0.758006  0.068298           4.0     135
+Pitch        0.697862     0.850727 0.748399  0.072156           4.0     108
+
+Best-rule overall performance:
+- precision: 0.8109
+- recall: 0.9133
+- F1: 0.8481
+- false positive rate: 0.0354
+- median detection delay: 2.0
+
+Threshold interpretation:
+- p99_abs is acceptable. FPR is below 5%, but inspect plots.
+
+Phase 4 completion decision:
+- COMPLETE: Phase 4 controlled ATT attack detection is complete.
+- You can proceed to Phase 5 recovery after saving this report and key figures.
+
+Recommended carry-forward configuration:
+- Software sensor: V9 trained hybrid
+- Residual for Roll/Pitch: attacked_future[k+1] - V9_prediction[k+1]
+- Residual for Yaw: circular angular difference
+- Threshold decision: p99_abs
+- Window detector: W10_N3_mean1x
+- Recovery: not performed in Phase 4
+
+Important output folders:
+- Detection CSVs: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs
+- Aligned attacked segments: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/aligned_attacked_segments
+- Figures: /home/tchowdh4/sensor_recovery_project/figures/attack_detection_v9_corrected
+- Reports: /home/tchowdh4/sensor_recovery_project/detection_reports_v9_corrected
