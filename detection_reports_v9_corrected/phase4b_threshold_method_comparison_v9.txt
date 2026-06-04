@@ -1,0 +1,60 @@
+PHASE 4B THRESHOLD METHOD COMPARISON REPORT
+======================================================================
+
+Input aligned segment folder: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/aligned_attacked_segments
+Output comparison CSV folder: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/threshold_method_comparison_csvs
+Output figure folder: /home/tchowdh4/sensor_recovery_project/figures/attack_detection_v9_corrected_threshold_compare
+Summary CSV: /home/tchowdh4/sensor_recovery_project/detection_reports_v9_corrected/phase4b_threshold_method_comparison_v9.csv
+
+Rows in summary: 117
+
+Overall threshold-method comparison:
+ threshold_method  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n_rows
+scenario_specific        0.817808     0.882640 0.841846  0.032003           2.0      39
+     dynamic_xkf1        0.802128     0.886659 0.834314  0.035706           2.0      24
+    static_global        0.813566     0.816708 0.793358  0.030683           2.0      39
+yaw_static_global        0.815881     0.749544 0.742390  0.027626           2.0      15
+
+Threshold method by attack type:
+ threshold_method attack_type  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n_rows
+     dynamic_xkf1        bias        0.916777     0.976602 0.945696  0.038123           2.0       8
+     dynamic_xkf1        ramp        0.903966     0.833482 0.866586  0.038123          14.0       8
+     dynamic_xkf1       pulse        0.585641     0.849892 0.690659  0.030871           2.0       8
+scenario_specific        bias        0.924174     0.977015 0.949815  0.034514           2.0      13
+scenario_specific        ramp        0.909929     0.811602 0.857739  0.034514          17.0      13
+scenario_specific       pulse        0.619320     0.859302 0.717985  0.026981           2.0      13
+    static_global        bias        0.931550     0.919323 0.905606  0.031127           2.0      13
+    static_global        ramp        0.885202     0.671499 0.753287  0.034514          21.0      13
+    static_global       pulse        0.623946     0.859302 0.721181  0.026407           2.0      13
+yaw_static_global        bias        0.945416     0.827678 0.836275  0.024725           2.0       5
+yaw_static_global       pulse        0.642483     0.874358 0.739484  0.024623           2.0       5
+yaw_static_global        ramp        0.859742     0.546597 0.651412  0.033530          49.0       5
+
+Threshold method by axis:
+ threshold_method  axis  mean_precision  mean_recall  mean_f1  mean_fpr  median_delay  n_rows
+     dynamic_xkf1  Roll        0.796802     0.891838 0.834781  0.037474           2.0      12
+     dynamic_xkf1 Pitch        0.807454     0.881479 0.833846  0.033937           2.0      12
+scenario_specific   Yaw        0.822915     0.886754 0.846456  0.031058           2.0      15
+scenario_specific  Roll        0.819022     0.886593 0.845697  0.032017           2.0      12
+scenario_specific Pitch        0.810208     0.873543 0.832234  0.033169           2.0      12
+    static_global  Roll        0.816975     0.870155 0.835353  0.032017           2.0      12
+    static_global Pitch        0.807264     0.847215 0.815073  0.033169           2.0      12
+    static_global   Yaw        0.815881     0.749544 0.742390  0.027626           2.0      15
+yaw_static_global   Yaw        0.815881     0.749544 0.742390  0.027626           2.0      15
+
+Recommended threshold method:
+- scenario_specific
+- mean precision: 0.8178
+- mean recall: 0.8826
+- mean F1: 0.8418
+- mean FPR: 0.0320
+- median detection delay: 2.0
+
+Phase 4B decision rule:
+- Prefer the method with the highest mean F1.
+- If two methods are close, prefer lower false positive rate.
+- If still close, prefer lower detection delay.
+
+Decision:
+- Phase 4B threshold-method comparison is acceptable.
+- You may carry the recommended method into Phase 5 recovery.
