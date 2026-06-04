@@ -1,0 +1,4 @@
+attack_type,evaluated_cases,success_count_rmse,mean_heuristic_improvement_over_original_rmse_percent,success_rate_rmse_percent
+bias,800,647,33.84468286977208,80.875
+pulse,800,643,35.44451243546781,80.375
+ramp,800,640,14.533717276057155,80.0

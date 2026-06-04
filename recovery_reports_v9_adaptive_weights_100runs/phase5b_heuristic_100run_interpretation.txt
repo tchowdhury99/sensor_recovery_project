@@ -1,0 +1,155 @@
+PHASE 5B HEURISTIC ADAPTIVE-WEIGHT ROBUSTNESS TEST: 100 RUNS
+====================================================================================================
+
+Purpose:
+  Test whether the XKF1/kinematic heuristic adaptive-weight method is robust
+  across randomized threshold and weight configurations.
+
+Success definition:
+  A file succeeds if heuristic adaptive RMSE is lower than original V9 recovered RMSE.
+
+Inputs:
+  Detection folder: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs
+  XKF1 folder: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv
+
+Outputs:
+  All results CSV: /home/tchowdh4/sensor_recovery_project/recovery_reports_v9_adaptive_weights_100runs/phase5b_heuristic_100run_all_results.csv
+  Run summary CSV: /home/tchowdh4/sensor_recovery_project/recovery_reports_v9_adaptive_weights_100runs/phase5b_heuristic_100run_run_summary.csv
+  File failure summary CSV: /home/tchowdh4/sensor_recovery_project/recovery_reports_v9_adaptive_weights_100runs/phase5b_heuristic_100run_file_failure_summary.csv
+  Axis summary CSV: /home/tchowdh4/sensor_recovery_project/recovery_reports_v9_adaptive_weights_100runs/phase5b_heuristic_100run_axis_summary.csv
+  Attack summary CSV: /home/tchowdh4/sensor_recovery_project/recovery_reports_v9_adaptive_weights_100runs/phase5b_heuristic_100run_attack_summary.csv
+
+Overall result:
+  Runs: 100
+  Files per run: 24
+  Total file-level evaluations: 2400
+  Total file-level successes by RMSE: 1930
+  Total file-level failures by RMSE: 470
+  Overall file-level success rate by RMSE (%): 80.41666666666667
+
+  Runs where all files succeeded: 26/100
+  All-file run success rate (%): 26.0
+
+Best run:
+  run_id: 99
+  success_count_rmse: 24/24
+  success_rate_rmse_percent: 100.0
+  mean_heuristic_improvement_over_original_rmse_percent: 63.70521906634253
+
+Worst run:
+  run_id: 84
+  success_count_rmse: 0/24
+  success_rate_rmse_percent: 0.0
+  mean_heuristic_improvement_over_original_rmse_percent: -108.29427117665462
+
+Most frequently failed files:
+----------------------------------------------------------------------------------------------------
+File: baseline_03_forward_motion_Pitch_ramp_W10_N3_mean1x_detection.csv
+  Baseline: baseline_03_forward_motion
+  Target: Pitch
+  Attack type: ramp
+  Fail count by RMSE: 58/100
+  Success rate by RMSE (%): 42.0
+  Mean original RMSE: 0.00457160742494274
+  Mean heuristic RMSE: 0.005609895822124705
+  Mean heuristic improvement over original RMSE (%): -22.711670112290314
+
+File: baseline_03_forward_motion_Pitch_pulse_W10_N3_mean1x_detection.csv
+  Baseline: baseline_03_forward_motion
+  Target: Pitch
+  Attack type: pulse
+  Fail count by RMSE: 57/100
+  Success rate by RMSE (%): 43.0
+  Mean original RMSE: 0.0029985950530870115
+  Mean heuristic RMSE: 0.0038777858596279295
+  Mean heuristic improvement over original RMSE (%): -29.320091275272517
+
+File: baseline_03_forward_motion_Pitch_bias_W10_N3_mean1x_detection.csv
+  Baseline: baseline_03_forward_motion
+  Target: Pitch
+  Attack type: bias
+  Fail count by RMSE: 57/100
+  Success rate by RMSE (%): 43.0
+  Mean original RMSE: 0.0036948157169747185
+  Mean heuristic RMSE: 0.00471618072609809
+  Mean heuristic improvement over original RMSE (%): -27.643192174132473
+
+File: baseline_05_mixed_maneuver_Pitch_ramp_W10_N3_mean1x_detection.csv
+  Baseline: baseline_05_mixed_maneuver
+  Target: Pitch
+  Attack type: ramp
+  Fail count by RMSE: 34/100
+  Success rate by RMSE (%): 66.0
+  Mean original RMSE: 0.001944801028488975
+  Mean heuristic RMSE: 0.002030158903543209
+  Mean heuristic improvement over original RMSE (%): -4.389028687451542
+
+File: baseline_05_mixed_maneuver_Pitch_bias_W10_N3_mean1x_detection.csv
+  Baseline: baseline_05_mixed_maneuver
+  Target: Pitch
+  Attack type: bias
+  Fail count by RMSE: 33/100
+  Success rate by RMSE (%): 67.0
+  Mean original RMSE: 0.0012895936237607036
+  Mean heuristic RMSE: 0.0013099767951216764
+  Mean heuristic improvement over original RMSE (%): -1.5805887207732559
+
+File: baseline_03_forward_motion_Roll_pulse_W10_N3_mean1x_detection.csv
+  Baseline: baseline_03_forward_motion
+  Target: Roll
+  Attack type: pulse
+  Fail count by RMSE: 30/100
+  Success rate by RMSE (%): 70.0
+  Mean original RMSE: 0.0004133984412176448
+  Mean heuristic RMSE: 0.0003898133685112224
+  Mean heuristic improvement over original RMSE (%): 5.705167304684012
+
+File: baseline_05_mixed_maneuver_Pitch_pulse_W10_N3_mean1x_detection.csv
+  Baseline: baseline_05_mixed_maneuver
+  Target: Pitch
+  Attack type: pulse
+  Fail count by RMSE: 28/100
+  Success rate by RMSE (%): 72.0
+  Mean original RMSE: 0.00043479887968866677
+  Mean heuristic RMSE: 0.000403354716253838
+  Mean heuristic improvement over original RMSE (%): 7.231886949051954
+
+File: baseline_05_mixed_maneuver_Roll_ramp_W10_N3_mean1x_detection.csv
+  Baseline: baseline_05_mixed_maneuver
+  Target: Roll
+  Attack type: ramp
+  Fail count by RMSE: 23/100
+  Success rate by RMSE (%): 77.0
+  Mean original RMSE: 0.0018468273376346278
+  Mean heuristic RMSE: 0.0016211402740800066
+  Mean heuristic improvement over original RMSE (%): 12.220257896099579
+
+File: baseline_03_forward_motion_Roll_ramp_W10_N3_mean1x_detection.csv
+  Baseline: baseline_03_forward_motion
+  Target: Roll
+  Attack type: ramp
+  Fail count by RMSE: 21/100
+  Success rate by RMSE (%): 79.0
+  Mean original RMSE: 0.0013627982075137528
+  Mean heuristic RMSE: 0.001330042985801583
+  Mean heuristic improvement over original RMSE (%): 2.403526914812085
+
+File: baseline_05_mixed_maneuver_Roll_bias_W10_N3_mean1x_detection.csv
+  Baseline: baseline_05_mixed_maneuver
+  Target: Roll
+  Attack type: bias
+  Fail count by RMSE: 21/100
+  Success rate by RMSE (%): 79.0
+  Mean original RMSE: 0.0013818475752912043
+  Mean heuristic RMSE: 0.0009460940691557564
+  Mean heuristic improvement over original RMSE (%): 31.534122426174193
+
+
+Interpretation guide:
+  If all-file run success rate is high, the heuristic adaptive method is robust.
+  If many runs fail on the same files, those scenarios are unstable for heuristic weighting.
+  If success rate is mixed, keep original V9 as official and report heuristic weighting as experimental.
+
+Final interpretation:
+  The heuristic adaptive method is partially useful but not consistently robust.
+  Original V9 should remain the official method unless a tuned configuration is justified.
