@@ -1,0 +1,13 @@
+[INFO] Phase 3B component residual/threshold audit started.
+[INFO] This script will not overwrite official Phase 1/2/3/4/5 outputs.
+[INFO] Found 5 V9 prediction output files.
+[INFO] Processing: baseline_01_hover_ATT_trained_hybrid_prediction_outputs.csv
+[INFO] Processing: baseline_02_high_altitude_hover_ATT_trained_hybrid_prediction_outputs.csv
+[INFO] Processing: baseline_03_forward_motion_ATT_trained_hybrid_prediction_outputs.csv
+[INFO] Processing: baseline_04_yaw_rotation_ATT_trained_hybrid_prediction_outputs.csv
+[INFO] Processing: baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+[INFO] Wrote component threshold summary: /home/tchowdh4/sensor_recovery_project/phase3b_component_thresholds_v9/phase3b_component_clean_residual_thresholds.csv
+[WARN] Official Phase 3 threshold comparison was not available.
+[INFO] Generating figures...
+[INFO] Wrote report: /home/tchowdh4/sensor_recovery_project/phase3b_component_thresholds_v9/reports/phase3b_component_residual_threshold_report.md
+[INFO] Phase 3B completed.

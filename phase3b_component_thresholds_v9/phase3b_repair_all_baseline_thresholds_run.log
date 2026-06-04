@@ -1,0 +1,22 @@
+[INFO] Found 15 residual CSV files.
+[INFO] Residual rows loaded: 4815
+[INFO] Baselines: ['baseline_01_hover_ATT', 'baseline_02_high_altitude_hover_ATT', 'baseline_03_forward_motion_ATT', 'baseline_04_yaw_rotation_ATT', 'baseline_05_mixed_maneuver_ATT']
+[INFO] Axes: ['Pitch', 'Roll', 'Yaw']
+[INFO] Wrote summary CSV: /home/tchowdh4/sensor_recovery_project/phase3b_component_thresholds_v9/phase3b_component_clean_residual_thresholds.csv
+[INFO] Correct: found 12 all-baseline rows.
+[INFO] Wrote report: /home/tchowdh4/sensor_recovery_project/phase3b_component_thresholds_v9/reports/phase3b_component_residual_threshold_report.md
+
+[INFO] All-baseline rows:
+ axis component    n      mae     rmse  p99_abs_residual  p995_abs_residual  mean_abs_plus_3std_abs_threshold  recommended_threshold
+ Roll    hybrid 1605 0.002270 0.003403          0.010780           0.016982                          0.009879               0.016982
+ Roll     naive 1605 0.001762 0.003113          0.011515           0.013184                          0.009465               0.013184
+ Roll        cv 1605 0.001655 0.002837          0.010067           0.011123                          0.008572               0.011123
+ Roll       arx 1605 0.004465 0.006044          0.016595           0.020976                          0.016688               0.020976
+Pitch    hybrid 1605 0.002458 0.003414          0.012192           0.015052                          0.009567               0.015052
+Pitch     naive 1605 0.001649 0.002890          0.010824           0.011937                          0.008771               0.011937
+Pitch        cv 1605 0.001560 0.002653          0.009100           0.011269                          0.008001               0.011269
+Pitch       arx 1605 0.015001 0.027359          0.078832           0.110714                          0.083661               0.110714
+  Yaw    hybrid 1605 0.001058 0.001864          0.006643           0.009342                          0.005663               0.009342
+  Yaw     naive 1605 0.001456 0.002795          0.012197           0.020488                          0.008615               0.020488
+  Yaw        cv 1605 0.000699 0.001385          0.004377           0.004630                          0.004287               0.004630
+  Yaw       arx 1605 0.009065 0.012884          0.030673           0.033577                          0.036539               0.036539
