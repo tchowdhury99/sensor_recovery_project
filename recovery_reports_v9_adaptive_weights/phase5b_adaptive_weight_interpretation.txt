@@ -1,0 +1,403 @@
+PHASE 5B XKF1-DRIVEN ADAPTIVE-WEIGHT RECOVERY INTERPRETATION
+==========================================================================================
+
+This is a separate experiment from official Phase 5.
+
+Official Phase 5 remains:
+  Original V9 trained hybrid recovery using W10_N3_mean1x detection.
+
+Phase 5B tests:
+  XKF1-driven adaptive blending of naive, constant-velocity, and ARX V9 components.
+
+Adaptive prediction:
+  x_adaptive[k+1] = w_naive*x_naive[k+1] + w_cv*x_cv[k+1] + w_arx*x_arx[k+1]
+
+Weight smoothing:
+  W_current = 0.9*W_previous + 0.1*W_target
+
+Decision rule:
+  Recommend adaptive weighting only if it improves recovery metrics over original V9 recovery.
+
+Overall Phase 5B result:
+  Files evaluated: 24
+  Adaptive better than original V9 by RMSE: 22/24
+
+Mean metrics:
+  Mean attacked RMSE: 0.017911034813894864
+  Mean original V9 recovered RMSE: 0.0015963915477515288
+  Mean adaptive V9 recovered RMSE: 0.0009526363007657221
+
+  Mean original improvement over attacked RMSE (%): 91.36055217371855
+  Mean adaptive improvement over attacked RMSE (%): 95.22362314724533
+  Mean adaptive improvement over original RMSE (%): 45.86930792354025
+
+  Mean attacked MAE: 0.007610638525531457
+  Mean original V9 recovered MAE: 0.0005646334334951755
+  Mean adaptive V9 recovered MAE: 0.0003236928719374533
+
+Interpretation:
+  Adaptive weighting improved some cases but not all.
+  It should remain an experimental extension, not the official method.
+
+Per-file results:
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Pitch_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_01_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_01_hover_XKF1.csv
+  Attacked RMSE: 0.0200707453972193
+  Original V9 recovered RMSE: 0.0014356673267818798
+  Adaptive V9 recovered RMSE: 0.0002575614824967819
+  Adaptive improvement over original RMSE (%): 82.05980747126712
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_01_hover_Pitch_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_01_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_01_hover_XKF1.csv
+  Attacked RMSE: 0.016056596317775448
+  Original V9 recovered RMSE: 0.0006733761704464996
+  Adaptive V9 recovered RMSE: 0.0001077698259080156
+  Adaptive improvement over original RMSE (%): 83.99559850231172
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Pitch_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_01_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_01_hover_XKF1.csv
+  Attacked RMSE: 0.01744039874179981
+  Original V9 recovered RMSE: 0.0015443912534712208
+  Adaptive V9 recovered RMSE: 0.0013501500668773325
+  Adaptive improvement over original RMSE (%): 12.577200638588563
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_01_hover_Pitch_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Roll_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_01_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_01_hover_XKF1.csv
+  Attacked RMSE: 0.015040461429091852
+  Original V9 recovered RMSE: 0.0015524010673865433
+  Adaptive V9 recovered RMSE: 0.00028984242620117007
+  Adaptive improvement over original RMSE (%): 81.3294107888551
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_01_hover_Roll_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_01_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_01_hover_XKF1.csv
+  Attacked RMSE: 0.012032369143273484
+  Original V9 recovered RMSE: 0.0006953655265872293
+  Adaptive V9 recovered RMSE: 0.0001295004464847424
+  Adaptive improvement over original RMSE (%): 81.37663695807369
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_01_hover_Roll_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_01_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_01_hover_XKF1.csv
+  Attacked RMSE: 0.01306935240284419
+  Original V9 recovered RMSE: 0.001544352337499809
+  Adaptive V9 recovered RMSE: 0.0004345539230815054
+  Adaptive improvement over original RMSE (%): 71.86173695408033
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_01_hover_Roll_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_01_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_02_high_altitude_hover_Pitch_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_02_high_altitude_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_02_high_altitude_hover_XKF1.csv
+  Attacked RMSE: 0.017452116886778713
+  Original V9 recovered RMSE: 0.001774620902048185
+  Adaptive V9 recovered RMSE: 0.0003235101541578965
+  Adaptive improvement over original RMSE (%): 81.77018236489178
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_bias_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_02_high_altitude_hover_Pitch_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_02_high_altitude_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_02_high_altitude_hover_XKF1.csv
+  Attacked RMSE: 0.014165524634485395
+  Original V9 recovered RMSE: 0.0014736741091008819
+  Adaptive V9 recovered RMSE: 0.0002471359278600379
+  Adaptive improvement over original RMSE (%): 83.22994708709238
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_pulse_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_02_high_altitude_hover_Pitch_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_02_high_altitude_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_02_high_altitude_hover_XKF1.csv
+  Attacked RMSE: 0.015158891907774127
+  Original V9 recovered RMSE: 0.002020487609923189
+  Adaptive V9 recovered RMSE: 0.001117865784736129
+  Adaptive improvement over original RMSE (%): 44.673464996965464
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Pitch_ramp_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_02_high_altitude_hover_Roll_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_02_high_altitude_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_02_high_altitude_hover_XKF1.csv
+  Attacked RMSE: 0.015067191891303485
+  Original V9 recovered RMSE: 0.0012273233818049592
+  Adaptive V9 recovered RMSE: 0.0002161614395364379
+  Adaptive improvement over original RMSE (%): 82.38757260384457
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_bias_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_02_high_altitude_hover_Roll_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_02_high_altitude_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_02_high_altitude_hover_XKF1.csv
+  Attacked RMSE: 0.012229730026073278
+  Original V9 recovered RMSE: 0.0010241944126034872
+  Adaptive V9 recovered RMSE: 0.00015754558214915019
+  Adaptive improvement over original RMSE (%): 84.61760968323664
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_pulse_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_02_high_altitude_hover_Roll_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_02_high_altitude_hover_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_02_high_altitude_hover_XKF1.csv
+  Attacked RMSE: 0.013087348355258372
+  Original V9 recovered RMSE: 0.0016294379727964776
+  Adaptive V9 recovered RMSE: 0.0011460478168880642
+  Adaptive improvement over original RMSE (%): 29.66606670389597
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_02_high_altitude_hover_Roll_ramp_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_03_forward_motion_Pitch_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_03_forward_motion_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_03_forward_motion_XKF1.csv
+  Attacked RMSE: 0.03544446029549281
+  Original V9 recovered RMSE: 0.0036948157169747185
+  Adaptive V9 recovered RMSE: 0.002410781864357977
+  Adaptive improvement over original RMSE (%): 34.75231110221911
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_03_forward_motion_Pitch_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_bias_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_03_forward_motion_Pitch_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_03_forward_motion_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_03_forward_motion_XKF1.csv
+  Attacked RMSE: 0.027184660095233706
+  Original V9 recovered RMSE: 0.0029985950530870115
+  Adaptive V9 recovered RMSE: 0.0019973588828461532
+  Adaptive improvement over original RMSE (%): 33.390176149663816
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_03_forward_motion_Pitch_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_pulse_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_03_forward_motion_Pitch_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_03_forward_motion_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_03_forward_motion_XKF1.csv
+  Attacked RMSE: 0.030810126723826475
+  Original V9 recovered RMSE: 0.00457160742494274
+  Adaptive V9 recovered RMSE: 0.0036528685183243267
+  Adaptive improvement over original RMSE (%): 20.0966273176862
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_03_forward_motion_Pitch_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Pitch_ramp_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_03_forward_motion_Roll_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_03_forward_motion_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_03_forward_motion_XKF1.csv
+  Attacked RMSE: 0.01493308608249268
+  Original V9 recovered RMSE: 0.0010668675887624715
+  Adaptive V9 recovered RMSE: 0.0004958786461187176
+  Adaptive improvement over original RMSE (%): 53.5201320818154
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_03_forward_motion_Roll_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_bias_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_03_forward_motion_Roll_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_03_forward_motion_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_03_forward_motion_XKF1.csv
+  Attacked RMSE: 0.011453154200715817
+  Original V9 recovered RMSE: 0.0004133984412176448
+  Adaptive V9 recovered RMSE: 0.00020198621793266814
+  Adaptive improvement over original RMSE (%): 51.14006300127121
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_03_forward_motion_Roll_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_pulse_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_03_forward_motion_Roll_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_03_forward_motion_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_03_forward_motion_XKF1.csv
+  Attacked RMSE: 0.012980597553009274
+  Original V9 recovered RMSE: 0.0013627982075137528
+  Adaptive V9 recovered RMSE: 0.0010577438783712315
+  Adaptive improvement over original RMSE (%): 22.384409332255657
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_03_forward_motion_Roll_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_03_forward_motion_Roll_ramp_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_05_mixed_maneuver_Pitch_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_05_mixed_maneuver_XKF1.csv
+  Attacked RMSE: 0.021237638110673134
+  Original V9 recovered RMSE: 0.0012895936237607036
+  Adaptive V9 recovered RMSE: 0.0014944688285738578
+  Adaptive improvement over original RMSE (%): -15.886803488970322
+  Adaptive better than original: False
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_bias_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_05_mixed_maneuver_Pitch_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_05_mixed_maneuver_XKF1.csv
+  Attacked RMSE: 0.016660174022914483
+  Original V9 recovered RMSE: 0.00043479887968866677
+  Adaptive V9 recovered RMSE: 0.00033647905294563896
+  Adaptive improvement over original RMSE (%): 22.612713908883272
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_pulse_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Pitch
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_05_mixed_maneuver_Pitch_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_05_mixed_maneuver_XKF1.csv
+  Attacked RMSE: 0.01842468653593997
+  Original V9 recovered RMSE: 0.001944801028488975
+  Adaptive V9 recovered RMSE: 0.0021565455973700065
+  Adaptive improvement over original RMSE (%): -10.887724028280042
+  Adaptive better than original: False
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Pitch.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Pitch.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Pitch.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Pitch_ramp_W10_N3_mean1x_detection_phase5b_context_Pitch.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_05_mixed_maneuver_Roll_bias_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_05_mixed_maneuver_XKF1.csv
+  Attacked RMSE: 0.02257361410814768
+  Original V9 recovered RMSE: 0.0013818475752912043
+  Adaptive V9 recovered RMSE: 0.0011712029441915805
+  Adaptive improvement over original RMSE (%): 15.243695098226263
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_bias_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_bias_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_bias_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_bias_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_bias_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_05_mixed_maneuver_Roll_pulse_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_05_mixed_maneuver_XKF1.csv
+  Attacked RMSE: 0.017708199819962828
+  Original V9 recovered RMSE: 0.0007121541982238118
+  Adaptive V9 recovered RMSE: 0.00035678468049637964
+  Adaptive improvement over original RMSE (%): 49.90064211006008
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_pulse_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_pulse_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_pulse_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_pulse_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_pulse_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
+Target: Roll
+  Input detection file: /home/tchowdh4/sensor_recovery_project/attack_detection_v9_corrected/detection_csvs/baseline_05_mixed_maneuver_Roll_ramp_W10_N3_mean1x_detection.csv
+  Prediction file: /home/tchowdh4/sensor_recovery_project/prediction_results_v9_trained_hybrid/baseline_05_mixed_maneuver_ATT_trained_hybrid_prediction_outputs.csv
+  XKF1 file: /home/tchowdh4/sensor_recovery_project/logs/extracted_csv/baseline_05_mixed_maneuver_XKF1.csv
+  Attacked RMSE: 0.019583710851390455
+  Original V9 recovered RMSE: 0.0018468273376346278
+  Adaptive V9 recovered RMSE: 0.0017535272304715298
+  Adaptive improvement over original RMSE (%): 5.0519128270320355
+  Adaptive better than original: True
+  Output CSV: /home/tchowdh4/sensor_recovery_project/recovery_results_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_ramp_W10_N3_mean1x_detection_PHASE5B_ADAPTIVE_WEIGHTS.csv
+  Comparison plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_ramp_W10_N3_mean1x_detection_phase5b_recovery_comparison_Roll.png
+  Error plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_ramp_W10_N3_mean1x_detection_phase5b_error_comparison_Roll.png
+  Weight plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_ramp_W10_N3_mean1x_detection_phase5b_weight_trace_Roll.png
+  Context plot: /home/tchowdh4/sensor_recovery_project/figures/recovery_v9_adaptive_weights/baseline_05_mixed_maneuver_Roll_ramp_W10_N3_mean1x_detection_phase5b_context_Roll.png
+------------------------------------------------------------------------------------------
