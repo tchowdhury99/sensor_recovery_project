@@ -1,0 +1,8 @@
+question,decision,reason
+Does Phase 6B pass?,YES,B-phase evidence exists and passes core validation checks.
+Do official Phase 4/5 need rerun?,NO,Phase 2B/3B do not reveal a blocking bug; Phase 3B explicitly supports not rerunning Phase 4/5 from repair alone.
+Should Phase 4B be included?,YES_AS_EXTENSION,Threshold-method comparison is acceptable; scenario-specific is best overall and dynamic XKF1 is close for Roll/Pitch.
+Should Phase 5B XKF1 be included?,YES_AS_EXPERIMENTAL_EXTENSION,XKF1 adaptive improves 22/24 cases and reduces mean recovered RMSE.
+Should Phase 5B XKF1 be main result?,NO,Official V9 recovery should remain main; XKF1 adaptive is not universally better and was tested only on Roll/Pitch W10/N3 cases.
+Should Phase 5B recent-error be included?,ONLY_AS_OFFLINE_DIAGNOSTIC,It uses recent clean-reference error and produces too-good 24/24 improvement.
+Is project ready for final writing?,YES_WITH_CAUTION,"Main pipeline is complete; report B-phases carefully as extensions, not replacements."

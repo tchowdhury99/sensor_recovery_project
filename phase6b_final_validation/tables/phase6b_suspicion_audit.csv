@@ -1,0 +1,4 @@
+item,finding,risk,decision
+Phase 5B XKF1 adaptive,Improves 22/24 cases and uses XKF1 flight-context features.,Moderate. Improvement is strong but not perfect; likely plausible.,Keep as experimental extension/supplementary unless additional real-time validation is done.
+Phase 5B recent-error adaptive,Improves 24/24 cases and uses recent clean-window prediction error.,High. This is oracle-assisted because clean future/reference error is not available in real-time attacked deployment.,Do not present as main real-time result. Use only as offline diagnostic or upper-bound component-selection study.
+Phase 3B Pitch ARX,Pitch ARX recommended threshold is much larger than other Pitch components.,High if ARX is over-trusted for Pitch.,Do not use Pitch ARX dominance as main recovery logic without justification.

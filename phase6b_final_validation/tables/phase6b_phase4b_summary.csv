@@ -1,0 +1,2 @@
+phase,rows,best_method,best_mean_f1,best_mean_recall,best_mean_fpr,best_median_delay,decision,interpretation
+Phase 4B,117,scenario_specific,0.8418462575942831,0.8826396526396527,0.03200290040776339,2.0,PASS_EXTENSION,Threshold-method comparison is acceptable as an extension; do not replace official Phase 4 silently.

@@ -1,0 +1,2 @@
+phase,total_detection_csvs,component_alignment_pass,component_alignment_fail,clean_future_warning_rows,decision,interpretation
+Phase 2B,351,351,0,351,PASS,Target-axis V9 component columns are safe for Phase 5B use; CleanFuture mismatch is provenance warning.

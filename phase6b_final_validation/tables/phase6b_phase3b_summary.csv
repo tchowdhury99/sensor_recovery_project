@@ -1,0 +1,2 @@
+phase,all_baseline_rows,expected_all_baseline_rows,decision,interpretation
+Phase 3B,12,12,PASS,Component thresholds exist for Roll/Pitch/Yaw × hybrid/naive/CV/ARX.
