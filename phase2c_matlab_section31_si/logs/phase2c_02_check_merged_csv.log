@@ -1,0 +1,59 @@
+Found 5 merged CSV files.
+
+================================================================================
+File: baseline_01_hover_merged_ATT_XKF1_C0.csv
+Rows: 1253
+Missing required columns: []
+NaN count in required columns: 0
+Inf count in numeric required columns: 0
+t_sec start: 0.000000
+t_sec end:   125.199900
+median dt:   0.099960 sec
+approx Hz:   10.004
+STATUS: OK
+================================================================================
+File: baseline_02_high_altitude_hover_merged_ATT_XKF1_C0.csv
+Rows: 1411
+Missing required columns: []
+NaN count in required columns: 0
+Inf count in numeric required columns: 0
+t_sec start: 0.000000
+t_sec end:   140.999411
+median dt:   0.099960 sec
+approx Hz:   10.004
+STATUS: OK
+================================================================================
+File: baseline_03_forward_motion_merged_ATT_XKF1_C0.csv
+Rows: 1138
+Missing required columns: []
+NaN count in required columns: 0
+Inf count in numeric required columns: 0
+t_sec start: 0.000000
+t_sec end:   113.700335
+median dt:   0.099960 sec
+approx Hz:   10.004
+STATUS: OK
+================================================================================
+File: baseline_04_yaw_rotation_merged_ATT_XKF1_C0.csv
+Rows: 1848
+Missing required columns: []
+NaN count in required columns: 0
+Inf count in numeric required columns: 0
+t_sec start: 0.000000
+t_sec end:   184.700257
+median dt:   0.099960 sec
+approx Hz:   10.004
+STATUS: OK
+================================================================================
+File: baseline_05_mixed_maneuver_merged_ATT_XKF1_C0.csv
+Rows: 2388
+Missing required columns: []
+NaN count in required columns: 0
+Inf count in numeric required columns: 0
+t_sec start: 0.000000
+t_sec end:   238.699482
+median dt:   0.099960 sec
+approx Hz:   10.004
+STATUS: OK
+
+Check complete.
