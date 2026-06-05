@@ -1,0 +1,3 @@
+target,evaluated_cases,success_count_rmse,mean_heuristic_improvement_over_original_rmse_percent,success_rate_rmse_percent
+Pitch,1200,897,18.89617941521497,74.75
+Roll,1200,1033,36.98576230564972,86.08333333333333
